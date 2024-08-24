@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -16,6 +18,23 @@
 
         <section id="image" class="flex items-center justify-end  flex-[50%]">
             <div class="bg-image w-[400px] h-[620px] bg-cover object-cover mt-8 mr-7">
+                <!-- Swiper -->
+                <div class="swiper mySwiper right-[-113px] top-7">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img width="272px" class="h-[575px] object-fill" src="img/screenshot1.png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="272px" class="h-[575px] object-fill" src="img/screenshot2.png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="272px" class="h-[575px] object-fill" src="img/screenshot3.png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img width="272px" class="h-[575px] object-fill" src="img/screenshot4.png" />
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
@@ -29,20 +48,15 @@
                 <form class="flex flex-col items-center justify-center pt-8 gap-1.5" action="" method="post">
                     <input
                         class="w-[300px] border-[1px] border-gray-300 py-2 pl-2 pr-4 text-[12px] rounded-sm bg-gray-50 font-normal placeholder:text-gray-600 focus:outline-none"
-                        type="text" 
-                        placeholder="Numero, nome de usuário ou email" 
-                        name="usuario" id="iusuario"
-                    >
-                    <input 
-                        class="w-[300px] border-[1px] border-gray-300 py-2 pl-2 pr-4 text-[12px] rounded-sm bg-gray-50 font-normal placeholder:text-gray-600 focus:outline-none" 
-                        type="password" 
-                        placeholder="Password" 
-                        name="password" 
-                        id="ipassword"
-                    >
-                    <input class="border-none w-[300px] mt-4 rounded-lg bg-azul-claro text-sm py-1.5 text-white font-bold" type="submit" value="Acessar">
+                        type="text" placeholder="Numero, nome de usuário ou email" name="usuario" id="iusuario">
+                    <input
+                        class="w-[300px] border-[1px] border-gray-300 py-2 pl-2 pr-4 text-[12px] rounded-sm bg-gray-50 font-normal placeholder:text-gray-600 focus:outline-none"
+                        type="password" placeholder="Password" name="password" id="ipassword">
+                    <input
+                        class="border-none w-[300px] mt-4 rounded-lg bg-azul-claro text-sm py-1.5 text-white font-bold"
+                        type="submit" value="Acessar">
                 </form>
-                
+
                 <div class="mt-5 flex items-center justify-center gap-2  ">
                     <hr class="mt-5 border-[1.5px] w-[130px] mb-5">
                     <span class="text-sm text-gray-500">Ou</span>
@@ -54,14 +68,16 @@
 
                     <a class="text-azul-escuro text-sm font-medium flex items-center justify-center gap-1" href="#">
                         <img width="25px"
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADYUlEQVR4nO2ZzU4TURTHeYHSe2c6idG9r2BYu5GYYOnM9JMCYeXGxBWJaxcVsNAWKi2lgIDAyp1bwiPIA5jwYQyYGCRojBE95k5n2unMnZnOvQPpYk7y33T1+92cO+dMZ2AgrLDCCqsvKzK18zgyufs5MrkHg5O7enZgcMLIOz3bEB03smXKJkTzJG+1IC0bgMaMrOtZA5RrBeeanWRXtaBM4xRn68P+BSb2TiNtcJ/weX/w2AEeZxtaUHblxL9An8DjbAOEzAr4FggMfowfXmAX6A94gU3ACu4Ev+kBb4Cv65e1CTizAihVBaRWIKqUACllPRVAyaoFvq7Fv8BNwGcacC9fgxfrB3BweAxfvl3BxdUvLSdfL+Hw0zlE5QUbPKOAP3jUA/yD51twfH4JboUS8zZ4IV3jEQgAPteEu2PLcHT23RW+I9ANzyHgNqDM8Bsu8GuAMzWYXt2HXgolijZ4Ib3MIhAQfK6pXdj9j0c22LOLH/BwehuwPK+dPIHH2h3ohhdZBIKC1wTUCpxf/LQJPC1/ACFV7e75tB2eUSAYeJKoXILff65tAvenapZ+p8OLqTc8AnzwZDgRAVqJit4uXS1jgk+14NkF8sFslOTZ7nph0+7wYqrKIMCxlKHkknbqrSxANFGkC4zOARp9bcocCGrZBs8hwLbXOLWMV73cOgBRXbTBi0kmAfaljFVgvPAexOSSDZ78xiTgPl2t8KuePe9VQ8+aLWALfIxFgBWebJIsAtd//8EdtUiFjyUXGQR6hW+Dm14ByWqc6ExXcjlpheMzgOOz7QhykQrPIeAfnrbLEwm6wCz1wlrhYyqTgPeAssKb36DME5Y8It0Fqjr8EhU+plY4BDjhyXByF6h6wrML8MCb9hq3OyD2AB9TywwCAcGT1QC7CSQNcGd4ZoEg4Mleg+MOAk9e9QQvKQwCfv7y8NooSa/TSmgLGPAVKryklDgEOOHJU8ZdYNETnl0gAPiWwIyDQKEneElZYBBggO+8QXWvw44CI4We4DkEnKerM7wB3hlQQnxOu7CkZcipaxkpgEhayAZfssFLMpNAMPBOqwH95EtUeEmeZxe4DXhJcYdnEiBfRvoFXpKL/j9w4FR9GKfrpzcDX3aGl83gLXhptPjIt0BYYYUV1sBt1H9ja3+JK6NR4QAAAABJRU5ErkJggg==">
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADYUlEQVR4nO2ZzU4TURTHeYHSe2c6idG9r2BYu5GYYOnM9JMCYeXGxBWJaxcVsNAWKi2lgIDAyp1bwiPIA5jwYQyYGCRojBE95k5n2unMnZnOvQPpYk7y33T1+92cO+dMZ2AgrLDCCqsvKzK18zgyufs5MrkHg5O7enZgcMLIOz3bEB03smXKJkTzJG+1IC0bgMaMrOtZA5RrBeeanWRXtaBM4xRn68P+BSb2TiNtcJ/weX/w2AEeZxtaUHblxL9An8DjbAOEzAr4FggMfowfXmAX6A94gU3ACu4Ev+kBb4Cv65e1CTizAihVBaRWIKqUACllPRVAyaoFvq7Fv8BNwGcacC9fgxfrB3BweAxfvl3BxdUvLSdfL+Hw0zlE5QUbPKOAP3jUA/yD51twfH4JboUS8zZ4IV3jEQgAPteEu2PLcHT23RW+I9ANzyHgNqDM8Bsu8GuAMzWYXt2HXgolijZ4Ib3MIhAQfK6pXdj9j0c22LOLH/BwehuwPK+dPIHH2h3ohhdZBIKC1wTUCpxf/LQJPC1/ACFV7e75tB2eUSAYeJKoXILff65tAvenapZ+p8OLqTc8AnzwZDgRAVqJit4uXS1jgk+14NkF8sFslOTZ7nph0+7wYqrKIMCxlKHkknbqrSxANFGkC4zOARp9bcocCGrZBs8hwLbXOLWMV73cOgBRXbTBi0kmAfaljFVgvPAexOSSDZ78xiTgPl2t8KuePe9VQ8+aLWALfIxFgBWebJIsAtd//8EdtUiFjyUXGQR6hW+Dm14ByWqc6ExXcjlpheMzgOOz7QhykQrPIeAfnrbLEwm6wCz1wlrhYyqTgPeAssKb36DME5Y8It0Fqjr8EhU+plY4BDjhyXByF6h6wrML8MCb9hq3OyD2AB9TywwCAcGT1QC7CSQNcGd4ZoEg4Mleg+MOAk9e9QQvKQwCfv7y8NooSa/TSmgLGPAVKryklDgEOOHJU8ZdYNETnl0gAPiWwIyDQKEneElZYBBggO+8QXWvw44CI4We4DkEnKerM7wB3hlQQnxOu7CkZcipaxkpgEhayAZfssFLMpNAMPBOqwH95EtUeEmeZxe4DXhJcYdnEiBfRvoFXpKL/j9w4FR9GKfrpzcDX3aGl83gLXhptPjIt0BYYYUV1sBt1H9ja3+JK6NR4QAAAABJRU5ErkJggg==">
                         Acesse com o Facebook
                     </a>
                 </div>
 
                 <a class="text-[12px] text-azul-escuro mt-4" href="#">Esqueceu a senha?</a>
 
-                <p class="text-[12px] text-center text-gray-500 py-[16px] px-[34px]">Puoi anche <a class="text-azul-escuro hover:underline" href="#">segnalare i contenuti che ritieni violino</a> nel tuo Paese senza accedere.</p>
+                <p class="text-[12px] text-center text-gray-500 py-[16px] px-[34px]">Puoi anche <a
+                        class="text-azul-escuro hover:underline" href="#">segnalare i contenuti che ritieni violino</a>
+                    nel tuo Paese senza accedere.</p>
 
             </div>
 
@@ -73,7 +89,7 @@
                     </a>
                 </span>
             </div>
-            
+
             <div id="download" class="flex flex-col ml-5 items-center justify-center w-[400px] mt-3">
                 <p class="text-sm font-normal text-gray-800">Baixe o aplicativo</p>
                 <div class="flex gap-2 mt-3">
@@ -85,11 +101,20 @@
 
     </main>
 
-    
-
     <footer>
 
     </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            effect: "fade",
+            autoplay: true,
+            delat: 1000
+        });
+    </script>
 </body>
 
 </html>
